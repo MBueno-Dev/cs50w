@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>
+            {% block title %}
+                Put title in here 
+            {% endblock %}
+        </title>
+    </head>
+
+    <body>
+        Aqui está no body, fora do block
+        {% block content %}
+            Aqui está no block <br>
+        {% endblock content %}
+
+    </body>
+
+</html>

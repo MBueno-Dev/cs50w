@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block content %}
+<br>Conteudo da tabela <br>
+<ul>
+    {% for item in items %}
+    <li>{{item.title}}: 
+        {% if item.vouf %}
+            True
+        {% else %}
+            False
+        {% endif %}
+    </li>
+    {% endfor %}
+
+</ul>
+    
+{% endblock%}
