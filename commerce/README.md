@@ -35,13 +35,14 @@
 
 <h2>Screenshots</h2>
 
-![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing_closed.png)
 
-![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/create_listing.png)
+
 
 ![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/index.png)
 
 ![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing.png)
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/create_listing.png)
 
 ![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing_closed.png)
 
