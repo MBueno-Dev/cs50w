@@ -34,3 +34,6 @@
 
 
 <h2>Screenshots</h2>
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/bid_success.png)
+
