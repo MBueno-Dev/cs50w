@@ -35,5 +35,29 @@
 
 <h2>Screenshots</h2>
 
-![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/bid_success.png)
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing_closed.png)
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/create_listing.png)
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/index.png)
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing.png)
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing_closed.png)
+
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing_with_bid.png)
+
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/listing_won.png)
+
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/login.png)
+
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/register.png)
+
+
+![](https://raw.githubusercontent.com/MBueno-Dev/cs50w/main/commerce/screenshots/watch_list.png)
+
 
