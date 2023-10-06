@@ -1,0 +1,49 @@
+{% extends "network/layout.html" %}
+
+
+
+
+{% block body %}
+    <h1>All Posts</h1>
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'index' %}" method="POST">
+            {% csrf_token %}
+            <div class="my-3 mx-5">
+                <label for="exampleInputEmail1"><h4>New Post</h4></label>
+                <textarea class="form-control" name="content" id="content" rows="3"></textarea>
+
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+        </form>
+
+        <br>
+    {% endif %}
+
+    {% for post in posts_of_the_page%}
+    <form>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>{{ post.user.username }}</strong><br/>
+                {{ post.content }}<br/>
+                <small class="form-text text-muted">{{ post.date }}</small>
+                <small class="form-text text-muted"> 👍 {{ post.likes.count }}</small>
+
+            </li>
+        </ul>
+
+    </form>        
+    {% endfor %}
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination d-flex justify-content-center">
+          {% if posts_of_the_page.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{posts_of_the_page.previous_page_number}}">Previous</a></li>
+          {% endif %}
+          
+          {% if posts_of_the_page.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{posts_of_the_page.next_page_number}}">Next</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+{% endblock %}

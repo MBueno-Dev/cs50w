@@ -1,0 +1,72 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div class="container">
+        {% if message %}
+            {% if update %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif%}
+        {% endif%}
+
+                
+    </div>
+
+    {% if listing.isActive == False and user == listing.price.user %}
+    <div class="alert alert-success" role="alert">
+        Congratulations! You won the auction!
+    </div>
+    {% endif %}
+
+
+    <div class="row mx-1">
+        {% if user.is_authenticated and listing.isActive %}
+            {% if isOwner %}
+                <form action="{% url 'closeAuction' id=listing.id %}" method="POST" class="mx-3">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Close auction</button>
+                </form>
+            {% endif %}
+            {% if isListingInWatchList %}
+                <form action="{% url 'removeWatchlist' id=listing.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Remove From Watchlist</button>
+                </form>
+            {% else %}
+                <form action="{% url 'addWatchlist' id=listing.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Add to Watchlist</button>
+                </form>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <h2>{{ listing.title }}</h2>
+    <br>
+   
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{listing.imageurl}}" alt="{{ listing.title }}">
+                <div class="card-body">
+                    <p class="card-text">{{ listing.description }}</p>
+                    <p class="card-text">{{ listing.owner }}</p>
+                    <p class="card-text"><h5>{{ listing.price.bid }}</h5></p>
+                    {% if user.is_authenticated == True and user.username != listing.owner.username %}
+                        <form action="{% url 'addBid' id=listing.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="price">Add Bid</label>
+                                <input type="number" min="0" name="newBid" placeholder="Add a new bid">
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
+                        </form>
+
+                    {% endif %}
+                </div>
+            </div>
+
+{% endblock %}
